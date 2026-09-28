@@ -1,0 +1,7 @@
+```text
+.env
+__pycache__/
+.venv/
+.ipynb_checkpoints/
+*.pyc
+ecommerce_data/
