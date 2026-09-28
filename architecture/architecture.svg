@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1035"/>
+    </linearGradient>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38BDF8"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F97316"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#A855F7"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#22C55E"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1120" height="600" fill="url(#bgGrad)" rx="16"/>
+
+  <!-- Header -->
+  <text x="560" y="45" text-anchor="middle" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22" font-weight="bold">END TO END AWS-ECOMMERCE-PIPELINE</text>
+  <text x="560" y="70" text-anchor="middle" fill="#94A3B8" font-family="Arial, sans-serif" font-size="13">Batch Data Generation • Live API Streaming • Serverless Ingestion • PySpark ETL • Athena Analytics</text>
+
+  <!-- ================= COLUMN 1: SOURCES ================= -->
+  <!-- Box 1A: Batch Generator -->
+  <rect x="40" y="110" width="230" height="180" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+  <rect x="55" y="125" width="105" height="22" rx="4" fill="#0284C7"/>
+  <text x="107" y="140" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">1A. BATCH GEN</text>
+  <text x="55" y="172" fill="#38BDF8" font-family="Arial, sans-serif" font-size="15" font-weight="bold">Python Generator</text>
+  <text x="55" y="197" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• generate_ecommerce_data.py</text>
+  <text x="55" y="217" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• 12 Relational Tables (CSV)</text>
+  <text x="55" y="237" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Boto3 Sync (upload_to_s3.py)</text>
+
+  <!-- Box 1B: Stream Generator -->
+  <rect x="40" y="340" width="230" height="180" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+  <rect x="55" y="355" width="115" height="22" rx="4" fill="#0284C7"/>
+  <text x="112" y="370" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">1B. STREAM GEN</text>
+  <text x="55" y="402" fill="#38BDF8" font-family="Arial, sans-serif" font-size="15" font-weight="bold">FastAPI Simulator</text>
+  <text x="55" y="427" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• ordering_api.py (FastAPI)</text>
+  <text x="55" y="447" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Live Incremental Events</text>
+  <text x="55" y="467" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Public ngrok Tunnel</text>
+
+  <!-- ================= COLUMN 2: INGESTION & RAW LAKE ================= -->
+  <!-- Box 3: S3 Raw Lake -->
+  <rect x="310" y="110" width="230" height="180" rx="12" fill="#1E293B" stroke="#22C55E" stroke-width="2"/>
+  <rect x="325" y="125" width="95" height="22" rx="4" fill="#16A34A"/>
+  <text x="372" y="140" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">3. RAW LAKE</text>
+  <text x="325" y="172" fill="#22C55E" font-family="Arial, sans-serif" font-size="15" font-weight="bold">Amazon S3 Raw</text>
+  <text x="325" y="197" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• raw/ecommerce/*.csv</text>
+  <text x="325" y="217" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• api_raw/orders/*.json</text>
+  <text x="325" y="237" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• last_order_id.txt (State)</text>
+
+  <!-- Box 2: AWS Lambda Ingestion -->
+  <rect x="310" y="340" width="230" height="180" rx="12" fill="#1E293B" stroke="#F97316" stroke-width="2"/>
+  <rect x="325" y="355" width="95" height="22" rx="4" fill="#EA580C"/>
+  <text x="372" y="370" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">2. INGESTION</text>
+  <text x="325" y="402" fill="#F97316" font-family="Arial, sans-serif" font-size="15" font-weight="bold">AWS Lambda</text>
+  <text x="325" y="427" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• lambda_Function.py</text>
+  <text x="325" y="447" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• S3 State Checkpointing</text>
+  <text x="325" y="467" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Deduplicated Order JSONs</text>
+
+  <!-- ================= COLUMN 3: ETL & CURATED LAKE ================= -->
+  <!-- Box 4: AWS Glue PySpark -->
+  <rect x="580" y="110" width="230" height="180" rx="12" fill="#1E293B" stroke="#F97316" stroke-width="2"/>
+  <rect x="595" y="125" width="115" height="22" rx="4" fill="#EA580C"/>
+  <text x="652" y="140" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">4. ETL &amp; MODELING</text>
+  <text x="595" y="172" fill="#F97316" font-family="Arial, sans-serif" font-size="15" font-weight="bold">AWS Glue PySpark</text>
+  <text x="595" y="197" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Merge CSV + API JSON</text>
+  <text x="595" y="217" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Data Quality &amp; Nulls</text>
+  <text x="595" y="237" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Star Schema (10 Dims, 6 Facts)</text>
+
+  <!-- Box 5: S3 Processed Parquet -->
+  <rect x="580" y="340" width="230" height="180" rx="12" fill="#1E293B" stroke="#22C55E" stroke-width="2"/>
+  <rect x="595" y="355" width="95" height="22" rx="4" fill="#16A34A"/>
+  <text x="642" y="370" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">5. CURATED</text>
+  <text x="595" y="402" fill="#22C55E" font-family="Arial, sans-serif" font-size="15" font-weight="bold">S3 Processed Parquet</text>
+  <text x="595" y="427" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• 10 Dimension Folders</text>
+  <text x="595" y="447" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• 6 Fact Folders</text>
+  <text x="595" y="467" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Snappy Parquet Format</text>
+
+  <!-- ================= COLUMN 4: WAREHOUSE & ANALYTICS ================= -->
+  <!-- Box 7: SQL Analytics -->
+  <rect x="850" y="110" width="230" height="180" rx="12" fill="#1E293B" stroke="#EC4899" stroke-width="2"/>
+  <rect x="865" y="125" width="95" height="22" rx="4" fill="#DB2777"/>
+  <text x="912" y="140" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">7. ANALYTICS</text>
+  <text x="865" y="172" fill="#EC4899" font-family="Arial, sans-serif" font-size="15" font-weight="bold">SQL Insights &amp; KPIs</text>
+  <text x="865" y="197" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• MoM Growth Percentage</text>
+  <text x="865" y="217" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Running Cumulative Sales</text>
+  <text x="865" y="237" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Customer Segmentation</text>
+
+  <!-- Box 6: Amazon Athena Warehouse -->
+  <rect x="850" y="340" width="230" height="180" rx="12" fill="#1E293B" stroke="#A855F7" stroke-width="2"/>
+  <rect x="865" y="355" width="105" height="22" rx="4" fill="#9333EA"/>
+  <text x="917" y="370" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">6. WAREHOUSE</text>
+  <text x="865" y="402" fill="#A855F7" font-family="Arial, sans-serif" font-size="15" font-weight="bold">Amazon Athena</text>
+  <text x="865" y="427" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Database: ecommerce_dw</text>
+  <text x="865" y="447" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• 16 External Tables (DDL)</text>
+  <text x="865" y="467" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">• Serverless SQL Engine</text>
+
+  <!-- ================= ARROWS ================= -->
+  <!-- 1A -> 3 (Batch Generator to S3 Raw) -->
+  <path d="M 270 200 L 300 200" stroke="#38BDF8" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+
+  <!-- 1B -> 2 (Stream Generator to Lambda) -->
+  <path d="M 270 430 L 300 430" stroke="#38BDF8" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+
+  <!-- 2 -> 3 (Lambda to S3 Raw) -->
+  <path d="M 425 340 L 425 300" stroke="#F97316" stroke-width="3" fill="none" marker-end="url(#arrow-orange)"/>
+
+  <!-- 3 -> 4 (S3 Raw to Glue PySpark) -->
+  <path d="M 540 200 L 570 200" stroke="#22C55E" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+
+  <!-- 4 -> 5 (Glue PySpark to S3 Processed) -->
+  <path d="M 695 290 L 695 330" stroke="#F97316" stroke-width="3" fill="none" marker-end="url(#arrow-orange)"/>
+
+  <!-- 5 -> 6 (S3 Processed to Athena Warehouse) -->
+  <path d="M 810 430 L 840 430" stroke="#22C55E" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+
+  <!-- 6 -> 7 (Athena Warehouse to SQL Analytics) -->
+  <path d="M 965 340 L 965 300" stroke="#A855F7" stroke-width="3" fill="none" marker-end="url(#arrow-purple)"/>
+
+  <!-- Footer Banner -->
+  <rect x="40" y="550" width="1040" height="30" rx="6" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="560" y="570" text-anchor="middle" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="12">Fully Automated Cloud Pipeline • Dual Ingestion (Batch + Stream) • Scalable Lakehouse Architecture</text>
+</svg>
